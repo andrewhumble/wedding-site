@@ -33,7 +33,7 @@ export default function EventCard({ className }: EventCardProps) {
                     </div>
 
                 </div>
-                <div className="absolute right-[-5] top-[-10] md:right-45 md:top-[-30] pointer-events-none w-[120px] h-[168px] md:w-[220px] md:h-[320px]">
+                <div className="absolute right-[-10] top-5 md:right-45 md:top-[-30] pointer-events-none w-[120px] h-[168px] md:w-[220px] md:h-[320px]">
                     <Image
                         src="/hydrangea.png"
                         alt="Decorative flowers"
