@@ -12,7 +12,7 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      setIsScrolled(scrollPosition > 50);
+      setIsScrolled(scrollPosition > 300);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -40,16 +40,21 @@ export default function Navbar() {
           opened={menuOpen}
           onClick={() => setMenuOpen((o) => !o)}
           size="md"
-          color={menuOpen || isScrolled ? "#58373E" : "#FAF5F1"}
+          color={menuOpen || isScrolled ? "#292524" : "#FAF5F1"}
           title="test"
         />
+
+        <div className={`${isScrolled ? 'text-stone-800' : 'text-[#FAF5F1]/0'} flex w-fit flex-col items-center justify-center flex-grow`}>
+          <h1 className="text-2xl font-script pr-5 mb-[-10]">The</h1>
+          <h1 className="text-2xl font-sans">Humbles</h1>
+        </div>
 
         {/* RSVP Button */}
         <button
           className={`
             font-sans-bold px-4 pt-2 pb-1 rounded-sm transition-colors duration-500 focus:outline-none shadow-md cursor-pointer pointer-events-auto
             ${menuOpen || isScrolled
-              ? 'bg-[#58373E] text-[#FAF5F1] hover:bg-[#4a2d33] hover:text-white'
+              ? 'bg-stone-800 text-[#FAF5F1] hover:bg-[#4a2d33] hover:text-white'
               : 'bg-[#FAF5F1] text-[#58373E] hover:bg-[#e8d8bf] hover:text-[#3d232a]'
             }
             hover:shadow-lg
