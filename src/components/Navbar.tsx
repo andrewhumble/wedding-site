@@ -34,7 +34,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`fixed w-full z-50 flex justify-between items-center py-6 px-6 transition-colors duration-400 ${isScrolled && !menuOpen ? 'bg-[#FAF5F1]' : 'bg-transparent'}`}>
+      <nav className={`fixed w-full z-50 flex justify-between items-center py-4 px-6 transition-colors duration-400 ${isScrolled && !menuOpen ? 'bg-[#FAF5F1]' : 'bg-transparent'}`}>
         {/* Menu Button */}
         <Burger
           opened={menuOpen}
