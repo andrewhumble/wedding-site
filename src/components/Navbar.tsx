@@ -12,7 +12,7 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      setIsScrolled(scrollPosition > 300);
+      setIsScrolled(scrollPosition > 250);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -44,7 +44,7 @@ export default function Navbar() {
           title="test"
         />
 
-        <div className={`${isScrolled ? 'text-stone-800' : 'text-[#FAF5F1]/0'} flex w-fit flex-col items-center justify-center flex-grow`}>
+        <div className={`${menuOpen ? 'hidden' : ''} ${isScrolled ? 'text-stone-800' : 'text-[#FAF5F1]/0'} flex w-fit flex-col items-center justify-center flex-grow`}>
           <h1 className="text-2xl font-script pr-5 mb-[-10]">The</h1>
           <h1 className="text-2xl font-sans">Humbles</h1>
         </div>
@@ -91,7 +91,7 @@ export default function Navbar() {
           leaveFrom="transform translate-y-0 opacity-100"
           leaveTo="transform -translate-y-full opacity-0"
         >
-          <div className="fixed top-0 left-0 w-full h-fit bg-[#FAF5F1] z-40 pt-22 pb-6 px-8 flex flex-col shadow-lg">
+          <div className="fixed top-0 left-0 w-full h-fit bg-[#FAF5F1] z-40 pt-28 pb-6 px-8 flex flex-col shadow-lg">
             <nav className="flex flex-col gap-2 text-center">
               <a href="#" className="text-xl font-sans font-medium text-gray-800 hover:text-[#58373E] transition-colors duration-200">Home</a>
               <div className="border-t border-gray-300 w-full"></div>
