@@ -44,7 +44,7 @@ export default function Navbar() {
           title="test"
         />
 
-        <div className={`${menuOpen ? 'hidden' : ''} ${isScrolled ? 'text-stone-800' : 'text-[#FAF5F1]/0'} flex w-fit flex-col items-center justify-center flex-grow`}>
+        <div className={`${menuOpen ? 'md:hidden' : ''} ${isScrolled ? 'text-stone-800' : 'text-[#FAF5F1]/0'} flex w-fit flex-col items-center justify-center flex-grow`}>
           <h1 className="text-2xl font-script pr-5 mb-[-10]">The</h1>
           <h1 className="text-2xl font-sans">Humbles</h1>
         </div>
