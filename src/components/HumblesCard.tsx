@@ -20,8 +20,8 @@ export default function HumblesCard() {
         {/* Right Panel - Image content */}
         <div className="w-full md:w-1/2 mt-[-3] md:mt-0 relative h-[45vh] md:h-[calc(100vh-50px)]">
           <Image
-            src="/intro.jpg"
-            alt="Elegant cafe setting with flowers and teacups"
+            src="/images/intro.jpg"
+            alt="The Humbles"
             fill
             className="object-cover"
             priority
