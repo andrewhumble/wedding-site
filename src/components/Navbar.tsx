@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { Burger } from '@mantine/core';
 import { Transition } from '@headlessui/react'
+import Link from 'next/link'
+import Button from '@/ui/Button';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -44,25 +46,16 @@ export default function Navbar() {
           title="test"
         />
 
-        <div className={`${menuOpen ? 'md:hidden' : ''} ${isScrolled ? 'text-stone-800' : 'text-[#FAF5F1]/0'} flex w-fit flex-col items-center justify-center flex-grow`}>
+        <div className={`${isScrolled && !menuOpen ? 'text-stone-800' : 'text-[#FAF5F1]/0'} flex w-fit flex-col items-center justify-center flex-grow`}>
           <h1 className="text-2xl font-script pr-5 mb-[-10]">The</h1>
           <h1 className="text-2xl font-sans">Humbles</h1>
         </div>
 
         {/* RSVP Button */}
-        <button
-          className={`
-            font-sans-bold px-4 pt-2 pb-1 rounded-sm transition-colors duration-500 focus:outline-none shadow-md cursor-pointer pointer-events-auto
-            ${menuOpen || isScrolled
-              ? 'bg-stone-800 text-[#FAF5F1] hover:bg-[#4a2d33] hover:text-white'
-              : 'bg-[#FAF5F1] text-[#58373E] hover:bg-[#e8d8bf] hover:text-[#3d232a]'
-            }
-            hover:shadow-lg
-          `}
-          aria-label="RSVP"
-        >
-          RSVP
-        </button>
+        <Button label="RSVP" className={`font-sans-bold px-4 pt-2 ${isScrolled
+          ? 'bg-stone-800 text-[#FAF5F1] hover:bg-[#4a2d33] hover:text-white'
+          : 'bg-[#FAF5F1] text-stone-800 hover:bg-[#e8d8bf] hover:text-[#3d232a]'
+          }`} />
       </nav>
 
       <Transition
@@ -93,11 +86,17 @@ export default function Navbar() {
         >
           <div className="fixed top-0 left-0 w-full h-fit bg-[#FAF5F1] z-40 pt-28 pb-6 px-8 flex flex-col shadow-lg">
             <nav className="flex flex-col gap-2 text-center">
-              <a href="#" className="text-xl font-sans font-medium text-gray-800 hover:text-[#58373E] transition-colors duration-200">Home</a>
+              <Link href="/" className="text-xl font-sans font-medium text-gray-800 hover:text-[#58373E] transition-colors duration-200">
+                Details
+              </Link>
               <div className="border-t border-gray-300 w-full"></div>
-              <a href="#" className="text-xl font-sans font-medium text-gray-800 hover:text-[#58373E] transition-colors duration-200">Details</a>
+              <Link href="/registry" className="text-xl font-sans font-medium text-gray-800 hover:text-[#58373E] transition-colors duration-200">
+                Registry
+              </Link>
               <div className="border-t border-gray-300 w-full"></div>
-              <a href="#" className="text-xl font-sans font-medium text-gray-800 hover:text-[#58373E] transition-colors duration-200">Registry</a>
+              <Link href="/" className="text-xl font-sans font-medium text-gray-800 hover:text-[#58373E] transition-colors duration-200">
+                RSVP
+              </Link>
             </nav>
           </div>
         </Transition>
@@ -116,11 +115,17 @@ export default function Navbar() {
         >
           <div className="fixed top-0 left-0 w-1/5 h-full bg-[#FAF5F1] z-40 pt-22 pb-6 px-8 flex flex-col shadow-lg">
             <nav className="flex flex-col gap-2 text-center">
-              <a href="#" className="text-xl font-sans font-medium text-gray-800 hover:text-[#58373E] transition-colors duration-200">Home</a>
+              <Link href="/" className="text-xl font-sans font-medium text-gray-800 hover:text-[#58373E] transition-colors duration-200">
+                Details
+              </Link>
               <div className="border-t border-gray-300 w-full"></div>
-              <a href="#" className="text-xl font-sans font-medium text-gray-800 hover:text-[#58373E] transition-colors duration-200">Details</a>
+              <Link href="/registry" className="text-xl font-sans font-medium text-gray-800 hover:text-[#58373E] transition-colors duration-200">
+                Registry
+              </Link>
               <div className="border-t border-gray-300 w-full"></div>
-              <a href="#" className="text-xl font-sans font-medium text-gray-800 hover:text-[#58373E] transition-colors duration-200">Registry</a>
+              <Link href="/" className="text-xl font-sans font-medium text-gray-800 hover:text-[#58373E] transition-colors duration-200">
+                RSVP
+              </Link>
             </nav>
           </div>
         </Transition>
