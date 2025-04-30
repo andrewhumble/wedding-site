@@ -8,7 +8,6 @@ export default function EventCard({ className }: EventCardProps) {
     return (
         <div className={className}>
             <section className="relative w-full bg-[#FAF5F1] py-16">
-                <div className="absolute top-0 left-0 right-0 h-2 bg-[url('/images/dashed-border.png')] bg-repeat-x"></div>
                 <div className="relative max-w-6xl mx-auto px-6 md:px-16">
                     <div className="border-1 border-stone-800 pb-10 px-6 py-12 md:px-12 flex flex-col items-center text-center relative overflow-hidden">
                         <h2 className="font-script italic text-stone-800 text-3xl md:text-4xl text-script">

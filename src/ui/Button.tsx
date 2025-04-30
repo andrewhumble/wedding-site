@@ -14,7 +14,7 @@ export default function Button({ className, onClick, href, children }: ButtonPro
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`gap-2 rounded-sm transition-all duration-300 cursor-pointer hover:shadow-lg hover:scale-105 hover:border-gray-300 tracking-tight group ${className}`}
+                className={`rounded-sm transition-all duration-300 cursor-pointer hover:shadow-lg hover:scale-105 hover:border-gray-300 tracking-tight group ${className}`}
                 aria-label={typeof children === 'string' ? children : undefined}
             >
                 {children}

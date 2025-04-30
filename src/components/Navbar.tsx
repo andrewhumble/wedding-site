@@ -46,15 +46,23 @@ export default function Navbar() {
           title="test"
         />
 
-        <div className={`${isScrolled && !menuOpen ? 'text-stone-800' : 'text-[#FAF5F1]/0'} flex w-fit flex-col items-center justify-center flex-grow`}>
-          <h1 className="text-2xl font-script pr-5 mb-[-10]">The</h1>
-          <h1 className="text-2xl font-sans">Humbles</h1>
+        <div
+          className={`${isScrolled
+              ? menuOpen
+                ? 'text-stone-800 md:text-stone-800/0'
+                : 'text-stone-800'
+              : menuOpen
+                ? 'text-stone-800 md:text-[#FAF5F1]/0'
+                : 'text-[#FAF5F1]/0'
+            } flex w-fit flex-col items-center justify-center flex-grow`}
+        >          <h1 className="text-2xl font-script pr-6 mb-[-11]">The</h1>
+          <h1 className="text-3xl font-sans">Humbles</h1>
         </div>
 
         {/* RSVP Button */}
         <Button
-          className={`relative top-[1px] font-sans-bold text-sm px-6 py-2 flex items-center justify-center ${isScrolled
-            ? 'bg-stone-800 text-[#FAF5F1] hover:bg-[#4a2d33] hover:text-white'
+          className={`relative top-[1px] font-sans-bold text-sm px-6 py-2 flex items-center justify-center ${isScrolled || menuOpen
+            ? 'bg-stone-800 text-[#FAF5F1] hover:bg-[#4a2d33] hover:text-white md:bg-[#FAF5F1] md:text-stone-800 md:hover:bg-[#e8d8bf] md:hover:text-[#3d232a]'
             : 'bg-[#FAF5F1] text-stone-800 hover:bg-[#e8d8bf] hover:text-[#3d232a]'
             }`}
         >
