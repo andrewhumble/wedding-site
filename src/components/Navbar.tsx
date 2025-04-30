@@ -52,10 +52,13 @@ export default function Navbar() {
         </div>
 
         {/* RSVP Button */}
-        <Button label="RSVP" className={`font-sans-bold px-4 pt-2 ${isScrolled
-          ? 'bg-stone-800 text-[#FAF5F1] hover:bg-[#4a2d33] hover:text-white'
-          : 'bg-[#FAF5F1] text-stone-800 hover:bg-[#e8d8bf] hover:text-[#3d232a]'
-          }`} />
+        <Button
+          label="RSVP"
+          className={`font-sans-bold px-6 py-2 flex items-center justify-center ${isScrolled
+            ? 'bg-stone-800 text-[#FAF5F1] hover:bg-[#4a2d33] hover:text-white'
+            : 'bg-[#FAF5F1] text-stone-800 hover:bg-[#e8d8bf] hover:text-[#3d232a]'
+            }`}
+        />
       </nav>
 
       <Transition
@@ -86,7 +89,7 @@ export default function Navbar() {
         >
           <div className="fixed top-0 left-0 w-full h-fit bg-[#FAF5F1] z-40 pt-28 pb-6 px-8 flex flex-col shadow-lg">
             <nav className="flex flex-col gap-2 text-center">
-              <Link href="/" className="text-xl font-sans font-medium text-gray-800 hover:text-[#58373E] transition-colors duration-200">
+              <Link href="/#details" className="text-xl font-sans font-medium text-gray-800 hover:text-[#58373E] transition-colors duration-200">
                 Details
               </Link>
               <div className="border-t border-gray-300 w-full"></div>
@@ -115,7 +118,7 @@ export default function Navbar() {
         >
           <div className="fixed top-0 left-0 w-1/5 h-full bg-[#FAF5F1] z-40 pt-22 pb-6 px-8 flex flex-col shadow-lg">
             <nav className="flex flex-col gap-2 text-center">
-              <Link href="/" className="text-xl font-sans font-medium text-gray-800 hover:text-[#58373E] transition-colors duration-200">
+              <Link href="/#details" className="text-xl font-sans font-medium text-gray-800 hover:text-[#58373E] transition-colors duration-200">
                 Details
               </Link>
               <div className="border-t border-gray-300 w-full"></div>
@@ -123,7 +126,7 @@ export default function Navbar() {
                 Registry
               </Link>
               <div className="border-t border-gray-300 w-full"></div>
-              <Link href="/" className="text-xl font-sans font-medium text-gray-800 hover:text-[#58373E] transition-colors duration-200">
+              <Link href="/#details" className="text-xl font-sans font-medium text-gray-800 hover:text-[#58373E] transition-colors duration-200">
                 RSVP
               </Link>
             </nav>
