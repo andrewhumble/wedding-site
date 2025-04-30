@@ -53,12 +53,13 @@ export default function Navbar() {
 
         {/* RSVP Button */}
         <Button
-          label="RSVP"
-          className={`font-sans-bold px-6 py-2 flex items-center justify-center ${isScrolled
+          className={`relative top-[1px] font-sans-bold text-sm px-6 py-2 flex items-center justify-center ${isScrolled
             ? 'bg-stone-800 text-[#FAF5F1] hover:bg-[#4a2d33] hover:text-white'
             : 'bg-[#FAF5F1] text-stone-800 hover:bg-[#e8d8bf] hover:text-[#3d232a]'
             }`}
-        />
+        >
+          RSVP
+        </Button>
       </nav>
 
       <Transition

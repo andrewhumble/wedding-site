@@ -1,15 +1,34 @@
+import React from 'react';
+
 interface ButtonProps {
-    label: string;
     className?: string;
+    onClick?: () => void;
+    href?: string;
+    children: React.ReactNode;
 }
 
-export default function Button({ label, className }: ButtonProps) {
+export default function Button({ className, onClick, href, children }: ButtonProps) {
+    if (href) {
+        return (
+            <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`gap-2 rounded-sm transition-all duration-300 cursor-pointer hover:shadow-lg hover:scale-105 hover:border-gray-300 tracking-tight group ${className}`}
+                aria-label={typeof children === 'string' ? children : undefined}
+            >
+                {children}
+            </a>
+        );
+    }
+
     return (
         <button
-            className={`mx-auto inline-flex items-center justify-center rounded-sm transition-colors duration-500 focus:outline-none shadow-md cursor-pointer pointer-events-auto hover:shadow-lg h-10 text-sm font-sans tracking-tight ${className}`}
-            aria-label={label}
+            onClick={onClick}
+            className={`rounded-sm transition-all duration-300 cursor-pointer hover:shadow-lg hover:scale-105 hover:border-gray-300 tracking-tight ${className}`}
+            aria-label={typeof children === 'string' ? children : undefined}
         >
-            <span className="relative top-[1px]">{label}</span>
+            {children}
         </button>
     );
 }
