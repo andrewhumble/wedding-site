@@ -1,5 +1,8 @@
+"use client"
+
 import Link from 'next/link';
 import Image from 'next/image';
+import NavItem from "@/components/NavItem";
 
 interface FooterProps {
     className?: string;
@@ -10,7 +13,7 @@ export default function Footer({ className }: FooterProps) {
         <div className={className}>
             <section className="relative w-full bg-[#FAF5F1] pt-28 md:pt-48 pb-8 md:pb-12 px-4 md:px-24">
                 <Image
-                    src="/images/murphy.png"
+                    src="/images/murphy_acrylic.png"
                     alt="Murphy"
                     width={150}
                     height={150}
@@ -24,22 +27,16 @@ export default function Footer({ className }: FooterProps) {
                         </Link>
                     </div>
                     <Image
-                        src="/images/murphy.png"
+                        src="/images/murphy_acrylic.png"
                         alt="Murphy"
                         width={200}
                         height={200}
-                        className="mx-auto hidden md:block"
+                        className="hidden md:block ml-12"
                     />
-                    <div className="flex flex-wrap gap-4 pt-4">
-                        <Link href="/#details">
-                            <p className="font-sans-light max-w-xl mx-auto text-stone-800 leading-relaxed text-lg md:text-xl underline underline-offset-5 decoration-1">Details</p>
-                        </Link>
-                        <Link href="/registry">
-                            <p className="font-sans-light max-w-xl mx-auto text-stone-800 leading-relaxed text-lg md:text-xl underline underline-offset-5 decoration-1">Registry</p>
-                        </Link>
-                        <Link href="/rsvp">
-                            <p className="font-sans-light max-w-xl mx-auto text-stone-800 leading-relaxed text-lg md:text-xl underline underline-offset-5 decoration-1">RSVP</p>
-                        </Link>
+                    <div className="flex flex-wrap gap-4 pt-4 font-sans-light max-w-xl leading-relaxed text-lg md:text-xl underline underline-offset-5 decoration-1">
+                        <NavItem href="/#details">Details</NavItem>
+                        <NavItem href="/registry">Registry</NavItem>
+                        <NavItem href="/gallery">Gallery</NavItem>
                     </div>
                 </div>
             </section>

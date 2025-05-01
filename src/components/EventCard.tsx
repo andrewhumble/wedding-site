@@ -54,15 +54,14 @@ export default function EventCard({ className }: EventCardProps) {
                             </a>
                         </p>
                     </div>
-
-                </div>
-                <div className="absolute right-[-5] top-0 md:right-45 md:top-[-55] pointer-events-none w-[120px] h-[168px] md:w-[220px] md:h-[320px]">
+                    <div className="absolute right-[-10] top-[-70] md:right-0 md:top-[-120] pointer-events-none w-[120px] h-[168px] md:w-[220px] md:h-[320px]">
                     <Image
                         src="/images/hydrangea.png"
                         alt="Decorative flowers"
                         fill
                         className="object-contain"
                     />
+                </div>
                 </div>
             </section>
         </div>

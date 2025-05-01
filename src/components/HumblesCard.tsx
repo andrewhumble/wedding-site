@@ -2,9 +2,6 @@ import Image from 'next/image'
 import DashedBorder from '@/ui/DashedBorder'
 
 export default function HumblesCard() {
-    
-    
-
     return (
         <div className="flex flex-col md:flex-row">
         {/* Left Panel - Red, striped background with logo */}

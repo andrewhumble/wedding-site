@@ -5,6 +5,7 @@ import { Burger } from '@mantine/core';
 import { Transition } from '@headlessui/react'
 import Link from 'next/link'
 import Button from '@/ui/Button';
+import NavItem from "@/components/NavItem";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -34,6 +35,23 @@ export default function Navbar() {
     };
   }, [menuOpen]);
 
+  function getButtonClassName(isScrolled: boolean, menuOpen: boolean): string {
+    const baseClasses = 'relative top-[1px] font-sans-bold text-sm px-6 py-1 flex items-center justify-center';
+    const scrolledClasses = 'bg-stone-800 text-[#FAF5F1] hover:bg-[#4a2d33] hover:text-white';
+    const defaultClasses = 'bg-[#FAF5F1] text-stone-800 hover:bg-slate-50 hover:text-[#3d232a]';
+    const mdClasses = 'md:bg-[#FAF5F1] md:text-stone-800 md:hover:hover:bg-slate-50 md:hover:text-[#3d232a]';
+
+    if (isScrolled) {
+      return menuOpen
+        ? `${baseClasses} ${scrolledClasses} ${mdClasses}`
+        : `${baseClasses} ${scrolledClasses}`;
+    }
+
+    return menuOpen
+      ? `${baseClasses} ${scrolledClasses} ${mdClasses}`
+      : `${baseClasses} ${defaultClasses}`;
+  }
+
   return (
     <>
       <nav className={`fixed w-full z-50 flex justify-between items-center py-4 px-6 transition-colors duration-400 ${isScrolled && !menuOpen ? 'bg-[#FAF5F1]' : 'bg-transparent'}`}>
@@ -46,27 +64,23 @@ export default function Navbar() {
           title="test"
         />
 
-        <div
-          className={`${isScrolled
-              ? menuOpen
-                ? 'text-stone-800 md:text-stone-800/0'
-                : 'text-stone-800'
-              : menuOpen
-                ? 'text-stone-800 md:text-[#FAF5F1]/0'
-                : 'text-[#FAF5F1]/0'
-            } flex w-fit flex-col items-center justify-center flex-grow`}
-        >          <h1 className="text-2xl font-script pr-6 mb-[-11]">The</h1>
+        <Link href="/" className={`${isScrolled
+          ? menuOpen
+            ? 'text-stone-800 md:text-stone-800/0'
+            : 'text-stone-800'
+          : menuOpen
+            ? 'text-stone-800 md:text-[#FAF5F1]/0'
+            : 'text-[#FAF5F1]/0'
+          } flex w-fit flex-col items-center justify-center flex-grow`}>
+          <h1 className="text-2xl font-script pr-6 mb-[-11]">The</h1>
           <h1 className="text-3xl font-sans">Humbles</h1>
-        </div>
+        </Link>
 
         {/* RSVP Button */}
-        <Button
-          className={`relative top-[1px] font-sans-bold text-sm px-6 py-2 flex items-center justify-center ${isScrolled || menuOpen
-            ? 'bg-stone-800 text-[#FAF5F1] hover:bg-[#4a2d33] hover:text-white md:bg-[#FAF5F1] md:text-stone-800 md:hover:bg-[#e8d8bf] md:hover:text-[#3d232a]'
-            : 'bg-[#FAF5F1] text-stone-800 hover:bg-[#e8d8bf] hover:text-[#3d232a]'
-            }`}
-        >
-          RSVP
+        <Button href="/rsvp" className={getButtonClassName(isScrolled, menuOpen)}>
+          <div className="flex items-center space-x-2 p-0 m-0">
+            <span className="font-sans-bold text-md pt-1">RSVP</span>
+          </div>
         </Button>
       </nav>
 
@@ -97,18 +111,12 @@ export default function Navbar() {
           leaveTo="transform -translate-y-full opacity-0"
         >
           <div className="fixed top-0 left-0 w-full h-fit bg-[#FAF5F1] z-40 pt-28 pb-6 px-8 flex flex-col shadow-lg">
-            <nav className="flex flex-col gap-2 text-center">
-              <Link href="/#details" className="text-xl font-sans font-medium text-gray-800 hover:text-[#58373E] transition-colors duration-200">
-                Details
-              </Link>
+            <nav className="flex flex-col gap-2 text-center font-sans text-xl">
+              <NavItem href="/#details">Details</NavItem>
               <div className="border-t border-gray-300 w-full"></div>
-              <Link href="/registry" className="text-xl font-sans font-medium text-gray-800 hover:text-[#58373E] transition-colors duration-200">
-                Registry
-              </Link>
+              <NavItem href="/registry">Registry</NavItem>
               <div className="border-t border-gray-300 w-full"></div>
-              <Link href="/" className="text-xl font-sans font-medium text-gray-800 hover:text-[#58373E] transition-colors duration-200">
-                RSVP
-              </Link>
+              <NavItem href="/gallery">Gallery</NavItem>
             </nav>
           </div>
         </Transition>
@@ -126,18 +134,12 @@ export default function Navbar() {
           leaveTo="transform -translate-x-full opacity-0"
         >
           <div className="fixed top-0 left-0 w-1/5 h-full bg-[#FAF5F1] z-40 pt-22 pb-6 px-8 flex flex-col shadow-lg">
-            <nav className="flex flex-col gap-2 text-center">
-              <Link href="/#details" className="text-xl font-sans font-medium text-gray-800 hover:text-[#58373E] transition-colors duration-200">
-                Details
-              </Link>
+            <nav className="flex flex-col gap-2 text-center font-sans text-xl">
+              <NavItem showActive={true} href="/#details">Details</NavItem>
               <div className="border-t border-gray-300 w-full"></div>
-              <Link href="/registry" className="text-xl font-sans font-medium text-gray-800 hover:text-[#58373E] transition-colors duration-200">
-                Registry
-              </Link>
+              <NavItem showActive={true} href="/registry">Registry</NavItem>
               <div className="border-t border-gray-300 w-full"></div>
-              <Link href="/#details" className="text-xl font-sans font-medium text-gray-800 hover:text-[#58373E] transition-colors duration-200">
-                RSVP
-              </Link>
+              <NavItem showActive={true} href="/gallery">Gallery</NavItem>
             </nav>
           </div>
         </Transition>
