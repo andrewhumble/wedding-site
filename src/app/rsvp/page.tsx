@@ -27,7 +27,7 @@ export default function RSVP() {
             <Navbar />
             <div className="px-4 pt-36 md:pt-42 pb-24 bg-[#58373E]" style={{ backgroundImage: 'url(/images/stripesImproved.png)', backgroundSize: '25% 100%' }}>
                 <div className="text-center px-4 md:w-1/2 mx-auto">
-                    <h1 className="text-xl md:text-4xl font-sans-bold tracking-widest text-white mb-16">RSVP</h1>
+                    <h1 className="text-2xl md:text-4xl font-sans-bold tracking-widest text-white mb-16">RSVP</h1>
                 </div>
             </div>
             <DashedBorder className="hidden relative md:flex items-center mt-[-3] mb-[-3] z-10" />
