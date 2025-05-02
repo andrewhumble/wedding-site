@@ -36,7 +36,7 @@ export default function Navbar() {
   }, [menuOpen]);
 
   function getButtonClassName(isScrolled: boolean, menuOpen: boolean): string {
-    const baseClasses = 'relative top-[1px] font-sans-bold text-sm px-6 py-1 flex items-center justify-center';
+    const baseClasses = 'relative top-[1px] font-sans-bold text-md px-6 py-2 flex items-center justify-center';
     const scrolledClasses = 'bg-stone-800 text-[#FAF5F1] hover:bg-[#4a2d33] hover:text-white';
     const defaultClasses = 'bg-[#FAF5F1] text-stone-800 hover:bg-slate-50 hover:text-[#3d232a]';
     const mdClasses = 'md:bg-[#FAF5F1] md:text-stone-800 md:hover:hover:bg-slate-50 md:hover:text-[#3d232a]';
@@ -79,7 +79,7 @@ export default function Navbar() {
         {/* RSVP Button */}
         <Button href="/rsvp" className={getButtonClassName(isScrolled, menuOpen)}>
           <div className="flex items-center space-x-2 p-0 m-0">
-            <span className="font-sans-bold text-md pt-1">RSVP</span>
+            <span className="font-sans-bold text-md">RSVP</span>
           </div>
         </Button>
       </nav>

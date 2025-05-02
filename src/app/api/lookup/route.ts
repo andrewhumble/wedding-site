@@ -18,8 +18,7 @@ export async function GET(req: NextRequest) {
       const { data, error } = await supabase
         .from('guests')
         .select('party_id')
-        .ilike('full_name', `%${name}%`)
-        .limit(1)
+        .eq('full_name', name)
 
       if (error) {
         console.error('Supabase error:', error)
@@ -28,7 +27,8 @@ export async function GET(req: NextRequest) {
 
       if (!data.length) return NextResponse.json({ error: 'Not found' }, { status: 404 })
 
-      return NextResponse.json({ partyId: data[0].party_id })
+      const partyIds = data.map(guest => guest.party_id)
+      return NextResponse.json({ partyIds })
     }
 
     if (partyId) {

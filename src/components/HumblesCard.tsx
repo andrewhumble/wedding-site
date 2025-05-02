@@ -11,7 +11,7 @@ export default function HumblesCard() {
           <div className="text-white flex w-fit flex-col items-center justify-center flex-grow md:mb-10">
             <h1 className="text-5xl font-script pr-12 mb-[-6]">The</h1>
             <h1 className="text-6xl font-sans">Humbles</h1>
-            <h1 className="text-2xl font-sans-light mt-[-8] pr-1 self-end">4.18.26</h1>
+            <h1 className="text-2xl font-sans-light mt-[-7] pr-1 self-end">4.18.26</h1>
           </div>
         </div>
 

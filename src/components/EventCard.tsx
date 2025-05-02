@@ -13,7 +13,7 @@ export default function EventCard({ className }: EventCardProps) {
                         <h2 className="font-script italic text-stone-800 text-3xl md:text-4xl text-script">
                             We&apos;re getting married!
                         </h2>
-                        <p className="font-sans-light max-w-3xl mx-auto text-stone-800 leading-relaxed text-3xl md:text-5xl pt-6">
+                        <p className="font-sans-light max-w-3xl mx-auto text-stone-800 leading-relaxed text-3xl md:text-5xl pt-2">
                             Saturday, April 18th, 2026
                         </p>
                         <p className="font-sans-light max-w-3xl mx-auto text-stone-800 leading-relaxed text-2xl md:text-3xl">

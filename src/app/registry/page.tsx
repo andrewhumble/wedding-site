@@ -19,7 +19,7 @@ export default function Registry() {
             <section className="relative w-full bg-[#FAF5F1] py-16">
                 <div className="relative max-w-6xl mx-auto px-6 md:px-16">
                     <div className="border-1 border-stone-800 pb-14 px-6 py-20 md:px-12 flex flex-col items-center text-center relative overflow-hidden">
-                        <h1 className="max-w-3xl text-xl md:text-3xl font-sans-light text-stone-800 mb-10 tracking-tight">Many of you are traveling from far and wide to celebrate with us, so your presence means the world and is all we ask for. If you&apos;d still like to contribute to our registry or honeymoon funds, please use the links below.</h1>
+                        <h1 className="max-w-3xl text-xl md:text-3xl font-sans text-stone-800 mb-10">Many of you are traveling from far and wide to celebrate with us, so your presence means the world and is all we ask for. If you&apos;d still like to contribute to our registry or honeymoon funds, please use the links below.</h1>
                         <div className="flex justify-center">
                             <Button
                                 href="https://www.amazon.com/wedding/share/thehumbles"
