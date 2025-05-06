@@ -11,7 +11,7 @@ interface FooterProps {
 export default function Footer({ className }: FooterProps) {
     return (
         <div className={className}>
-            <section className="relative w-full bg-[#FAF5F1] pt-28 md:pt-48 pb-8 md:pb-12 px-4 md:px-24">
+            <section className="relative w-full bg-secondary pt-28 md:pt-48 pb-8 md:pb-12 px-4 md:px-24">
                 <Image
                     src="/images/murphy_acrylic.png"
                     alt="Murphy"
@@ -34,7 +34,7 @@ export default function Footer({ className }: FooterProps) {
                         className="hidden md:block ml-12"
                     />
                     <div className="flex flex-wrap gap-4 pt-4 font-serif max-w-xl leading-relaxed text-lg md:text-xl underline underline-offset-5 decoration-1">
-                        <NavItem href="/#details">Details</NavItem>
+                        <NavItem href="/">Details</NavItem>
                         <NavItem href="/registry">Registry</NavItem>
                         <NavItem href="/gallery">Gallery</NavItem>
                     </div>

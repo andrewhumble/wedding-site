@@ -5,9 +5,10 @@ interface NavItemProps {
     href: string;
     showActive?: boolean;
     children: React.ReactNode;
+    onClick?: () => void;
 }
 
-export default function NavItem({ href, showActive = false, children }: NavItemProps) {
+export default function NavItem({ href, showActive = false, children, onClick }: NavItemProps) {
     const pathname = usePathname();
 
     const getLinkClasses = (href: string) => {
@@ -22,7 +23,7 @@ export default function NavItem({ href, showActive = false, children }: NavItemP
 
     // Active link check
     const isActive = (href: string) => {
-        if (href === '/#details' && pathname === '/') return true;
+        if (href === '/' && pathname === '/') return true;
         return href === pathname;
     };
 
@@ -33,7 +34,7 @@ export default function NavItem({ href, showActive = false, children }: NavItemP
     }
 
     return (
-        <Link href={href} className={className}>
+        <Link href={href} className={className} onClick={onClick}>
             {children}
         </Link>
     );

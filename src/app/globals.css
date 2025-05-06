@@ -41,3 +41,11 @@ html, body {
   font-family: 'EB Garamond', serif;
   font-weight: 600;
 }
+
+.bg-primary {
+  background-color: #58373E;
+}
+
+.bg-secondary {
+  background-color: #FAF5F1;
+}

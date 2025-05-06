@@ -8,7 +8,7 @@ interface GalleryCardProps {
 export default function GalleryCard({ className }: GalleryCardProps) {
     return (
         <div className={className}>
-            <section className="relative w-full bg-[#58373E] py-24 px-24 flex flex-col items-center bg-[url(/images/stripesImproved.png)] bg-[length:50%_100%] md:bg-[length:25%_100%]">
+            <section className="relative w-full bg-primary py-24 px-24 flex flex-col items-center bg-[url(/images/stripesImproved.png)] bg-[length:50%_100%] md:bg-[length:25%_100%]">
                 <div className="flex flex-col md:flex-row gap-24">
                     <Image
                         src="/images/pose.jpg"

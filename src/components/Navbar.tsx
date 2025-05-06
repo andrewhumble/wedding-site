@@ -37,11 +37,17 @@ export default function Navbar() {
     };
   }, [menuOpen]);
 
+  // Handle navigation
+  const handleNavigation = () => {
+    setMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   function getButtonClassName(isScrolled: boolean, menuOpen: boolean): string {
     const baseClasses = 'relative top-[1px] font-serif-bold text-md px-6 py-2 flex items-center justify-center';
-    const scrolledClasses = 'bg-stone-800 text-[#FAF5F1] hover:bg-[#4a2d33] hover:text-white';
-    const defaultClasses = 'bg-[#FAF5F1] text-stone-800 hover:bg-slate-50 hover:text-[#3d232a]';
-    const mdClasses = 'md:bg-[#FAF5F1] md:text-stone-800 md:hover:hover:bg-slate-50 md:hover:text-[#3d232a]';
+    const scrolledClasses = 'bg-stone-800 text-white hover:bg-[#4a2d33] hover:text-white';
+    const defaultClasses = 'bg-secondary text-stone-800 hover:bg-slate-50 hover:text-[#3d232a]';
+    const mdClasses = 'md:bg-secondary md:text-stone-800 md:hover:hover:bg-slate-50 md:hover:text-[#3d232a]';
 
     if (isScrolled) {
       return menuOpen
@@ -56,13 +62,13 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`fixed w-full z-50 flex justify-between items-center py-4 px-6 transition-colors duration-400 ${isScrolled && !menuOpen ? 'bg-[#FAF5F1]' : 'bg-transparent'}`}>
+      <nav className={`fixed w-full z-50 flex justify-between items-center py-4 px-6 transition-colors duration-400 ${isScrolled && !menuOpen ? 'bg-secondary' : 'bg-transparent'}`}>
         {/* Menu Button */}
         <Burger
           opened={menuOpen}
           onClick={() => setMenuOpen((o) => !o)}
           size="md"
-          color={menuOpen || isScrolled ? "#292524" : "#FAF5F1"}
+          color={menuOpen || isScrolled ? "#292524" : "white"}
           title="test"
         />
 
@@ -71,8 +77,8 @@ export default function Navbar() {
             ? 'text-stone-800 md:text-stone-800/0'
             : 'text-stone-800'
           : menuOpen
-            ? 'text-stone-800 md:text-[#FAF5F1]/0'
-            : 'text-[#FAF5F1]/0'
+            ? 'text-stone-800 md:hidden'
+            : 'hidden'
           } flex w-fit flex-col items-center justify-center flex-grow`}>
           <h1 className="text-2xl font-script pr-8 mb-[-15]">The</h1>
           <h1 className="text-3xl font-serif">Humbles</h1>
@@ -82,7 +88,7 @@ export default function Navbar() {
         {pathname !== '/rsvp' && (
           <Button href="/rsvp" className={getButtonClassName(isScrolled, menuOpen)}>
             <div className="flex items-center space-x-2 p-0 m-0">
-              <span className="font-serif-bold text-md">RSVP</span>
+              <span className="text-lg">RSVP</span>
             </div>
           </Button>
         )}
@@ -114,13 +120,13 @@ export default function Navbar() {
           leaveFrom="transform translate-y-0 opacity-100"
           leaveTo="transform -translate-y-full opacity-0"
         >
-          <div className="fixed top-0 left-0 w-full h-fit bg-[#FAF5F1] z-40 pt-28 pb-6 px-8 flex flex-col shadow-lg">
+          <div className="fixed top-0 left-0 w-full h-fit bg-secondary z-40 pt-28 pb-6 px-8 flex flex-col shadow-lg">
             <nav className="flex flex-col gap-2 text-center font-serif text-xl">
-              <NavItem href="/#details">Details</NavItem>
+              <NavItem href="/" onClick={handleNavigation}>Details</NavItem>
               <div className="border-t border-gray-300 w-full"></div>
-              <NavItem href="/registry">Registry</NavItem>
+              <NavItem href="/registry" onClick={handleNavigation}>Registry</NavItem>
               <div className="border-t border-gray-300 w-full"></div>
-              <NavItem href="/gallery">Gallery</NavItem>
+              <NavItem href="/gallery" onClick={handleNavigation}>Gallery</NavItem>
             </nav>
           </div>
         </Transition>
@@ -137,13 +143,13 @@ export default function Navbar() {
           leaveFrom="transform translate-x-0 opacity-100"
           leaveTo="transform -translate-x-full opacity-0"
         >
-          <div className="fixed top-0 left-0 w-1/5 h-full bg-[#FAF5F1] z-40 pt-22 pb-6 px-8 flex flex-col shadow-lg">
+          <div className="fixed top-0 left-0 w-1/5 h-full bg-secondary z-40 pt-22 pb-6 px-8 flex flex-col shadow-lg">
             <nav className="flex flex-col gap-2 text-center font-serif text-xl">
-              <NavItem showActive={true} href="/#details">Details</NavItem>
+              <NavItem showActive={true} href="/" onClick={handleNavigation}>Details</NavItem>
               <div className="border-t border-gray-300 w-full"></div>
-              <NavItem showActive={true} href="/registry">Registry</NavItem>
+              <NavItem showActive={true} href="/registry" onClick={handleNavigation}>Registry</NavItem>
               <div className="border-t border-gray-300 w-full"></div>
-              <NavItem showActive={true} href="/gallery">Gallery</NavItem>
+              <NavItem showActive={true} href="/gallery" onClick={handleNavigation}>Gallery</NavItem>
             </nav>
           </div>
         </Transition>

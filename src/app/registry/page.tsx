@@ -12,7 +12,7 @@ export default function Registry() {
                         <Button
                             href="https://www.amazon.com/wedding/share/thehumbles"
                             target="_blank"
-                            className="px-6 py-3 bg-stone-800 text-[#FAF5F1] hover:bg-stone-700 hover:text-white"
+                            className="px-6 py-3 bg-stone-800 hover:bg-stone-700"
                         >
                             <div className="flex items-center space-x-2 pt-1">
                                 <Image
