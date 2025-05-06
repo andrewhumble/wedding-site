@@ -18,7 +18,7 @@ export async function GET(req: NextRequest) {
       const { data, error } = await supabase
         .from('guests')
         .select('party_id')
-        .eq('full_name', name)
+        .ilike('full_name', name)
 
       if (error) {
         console.error('Supabase error:', error)

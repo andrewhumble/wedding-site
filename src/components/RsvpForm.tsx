@@ -5,18 +5,20 @@ interface Guest {
   id: string;
   full_name: string;
   email?: string;
+  rsvp_status?: string;
 }
 
 interface RsvpFormProps {
   partyId: string;
   initialParty: Guest[];
+  onSuccess: () => void;
 }
 
-export default function RsvpForm({ partyId, initialParty }: RsvpFormProps) {
+export default function RsvpForm({ partyId, initialParty, onSuccess }: RsvpFormProps) {
   const [email, setEmail] = useState(initialParty[0]?.email || '')
   const [responses, setResponses] = useState<Record<string, string>>(() => {
     return initialParty.reduce((acc: Record<string, string>, guest: Guest) => {
-      acc[guest.id] = 'no'
+      acc[guest.id] = guest.rsvp_status || 'no'
       return acc
     }, {})
   })
@@ -34,7 +36,7 @@ export default function RsvpForm({ partyId, initialParty }: RsvpFormProps) {
     })
 
     if (res.ok) {
-      window.location.href = '/rsvp/thanks'
+      onSuccess()
     } else {
       alert('Failed to submit RSVP')
     }
@@ -42,7 +44,7 @@ export default function RsvpForm({ partyId, initialParty }: RsvpFormProps) {
 
   return (
     <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-6">
-      <h2 className="text-2xl font-sans mb-6">Which guests will be attending?</h2>
+      <h2 className="text-2xl font-serif mb-6">Which guests will be attending?</h2>
       <div className="grid gap-4">
         {initialParty.map((guest) => (
           <div 
@@ -54,7 +56,7 @@ export default function RsvpForm({ partyId, initialParty }: RsvpFormProps) {
             <div className="flex items-center justify-between">
               <label 
                 htmlFor={`rsvp-${guest.id}`} 
-                className="font-sans text-lg flex-grow cursor-pointer"
+                className="font-serif text-lg flex-grow cursor-pointer"
               >
                 {guest.full_name}
               </label>
@@ -73,7 +75,7 @@ export default function RsvpForm({ partyId, initialParty }: RsvpFormProps) {
         ))}
       </div>
       <div className="mt-8">
-        <label className="block font-sans">Email for Confirmation (optional)</label>
+        <label className="block font-serif">Email for Confirmation (optional)</label>
         <input
           type="email"
           value={email}
@@ -83,7 +85,7 @@ export default function RsvpForm({ partyId, initialParty }: RsvpFormProps) {
       </div>
       <button 
         type="submit" 
-        className="w-full bg-stone-800 text-white px-4 py-3 rounded font-sans hover:bg-stone-600 transition-colors duration-200 cursor-pointer"
+        className="w-full bg-stone-800 text-white px-4 py-3 rounded font-serif hover:bg-stone-600 transition-colors duration-200 cursor-pointer"
       >
         Confirm RSVP
       </button>

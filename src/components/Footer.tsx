@@ -22,8 +22,8 @@ export default function Footer({ className }: FooterProps) {
                 <div className="flex justify-between items-end">
                     <div className="flex flex-wrap gap-4">
                         <Link href="/">
-                            <p className="font-sans max-w-xl mx-auto text-stone-800 leading-relaxed text-lg md:text-xl pt-4">Love,</p>
-                            <p className="font-sans max-w-xl mx-auto text-stone-800 leading-relaxed text-lg md:text-xl">Maggie & Andrew</p>
+                            <p className="font-serif max-w-xl mx-auto text-stone-800 leading-relaxed text-lg md:text-xl pt-4">Love,</p>
+                            <p className="font-serif max-w-xl mx-auto text-stone-800 leading-relaxed text-lg md:text-xl">Maggie & Andrew</p>
                         </Link>
                     </div>
                     <Image
@@ -33,7 +33,7 @@ export default function Footer({ className }: FooterProps) {
                         height={200}
                         className="hidden md:block ml-12"
                     />
-                    <div className="flex flex-wrap gap-4 pt-4 font-sans max-w-xl leading-relaxed text-lg md:text-xl underline underline-offset-5 decoration-1">
+                    <div className="flex flex-wrap gap-4 pt-4 font-serif max-w-xl leading-relaxed text-lg md:text-xl underline underline-offset-5 decoration-1">
                         <NavItem href="/#details">Details</NavItem>
                         <NavItem href="/registry">Registry</NavItem>
                         <NavItem href="/gallery">Gallery</NavItem>

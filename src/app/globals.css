@@ -1,41 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Luxurious+Script&family=MonteCarlo&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap');
 @import "tailwindcss";
-
-@font-face {
-  font-family: 'PierSans';
-  src: url('/fonts/PPPierSans-Regular.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'FitzgeraldRegular';
-  src: url('/fonts/HV Fitzgerald Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'FitzgeraldBold';
-  src: url('/fonts/HV Fitzgerald Bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: bold;
-}
-
-@font-face {
-  font-family: 'FitzgeraldRegularItalic';
-  src: url('/fonts/HV Fitzgerald Italic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'FitzgeraldBoldItalic';
-  src: url('/fonts/HV Fitzgerald Bold Italic.ttf') format('truetype');
-  font-weight: bold;
-  font-style: italic;
-}
 
 :root {
   --background: #ffffff;
@@ -49,40 +12,32 @@
   }
 }
 
-.font-script {
-  font-family: 'MonteCarlo', cursive;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.font-sans {
-  font-family: 'FitzgeraldBold', sans-serif;
-}
-
-.font-sans-light {
-  font-family: 'FitzgeraldRegular', sans-serif;
-}
-
-.font-sans-italic {
-  font-family: 'FitzgeraldRegularItalic', sans-serif;
-}
-
-.font-sans-bold-italic {
-  font-family: 'FitzgeraldBoldItalic', sans-serif;
-}
-
-.font-sans-bold {
-  font-family: 'FitzgeraldBold', sans-serif;
-}
-
-.font-marquee {
-  font-family: "Allerta Stencil", sans-serif;
-  font-weight: 900;
-  font-style: normal;
-}
-
 html, body {
   overflow-x: hidden;
   max-width: 100%;
   position: relative;
+}
+
+.font-script {
+  font-family: 'MonteCarlo', cursive;
+}
+
+.font-serif {
+  font-family: 'EB Garamond', serif;
+  font-weight: 400;
+}
+
+.font-serif-italic {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+}
+
+.font-serif-light {
+  font-family: 'EB Garamond', serif;
+  font-weight: 400;
+}
+
+.font-serif-bold {
+  font-family: 'EB Garamond', serif;
+  font-weight: 600;
 }

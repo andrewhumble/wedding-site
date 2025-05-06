@@ -10,13 +10,13 @@ export default function EventCard({ className }: EventCardProps) {
             <section className="relative w-full bg-[#FAF5F1] py-16">
                 <div className="relative max-w-6xl mx-auto px-6 md:px-16">
                     <div className="border-1 border-stone-800 pb-10 px-6 py-12 md:px-12 flex flex-col items-center text-center relative overflow-hidden">
-                        <h2 className="font-script italic text-stone-800 text-3xl md:text-4xl text-script">
+                        <h2 className="font-script text-stone-800 text-3xl md:text-4xl">
                             We&apos;re getting married!
                         </h2>
-                        <p className="font-sans-light max-w-3xl mx-auto text-stone-800 leading-relaxed text-3xl md:text-5xl pt-2">
+                        <p className="font-serif-light max-w-3xl mx-auto text-stone-800 leading-relaxed text-3xl md:text-5xl pt-2">
                             Saturday, April 18th, 2026
                         </p>
-                        <p className="font-sans-light max-w-3xl mx-auto text-stone-800 leading-relaxed text-2xl md:text-3xl">
+                        <p className="font-serif-light max-w-3xl mx-auto text-stone-800 leading-relaxed text-2xl md:text-3xl">
                             at 5:30 PM
                         </p>
                         <Image
@@ -40,10 +40,10 @@ export default function EventCard({ className }: EventCardProps) {
                             }}
                             className="pt-6 pb-4"
                         />
-                        <p className="font-sans-light max-w-3xl mx-auto text-stone-800 leading-relaxed text-2xl md:text-3xl">
+                        <p className="font-serif-light max-w-3xl mx-auto text-stone-800 leading-relaxed text-2xl md:text-3xl">
                             Gloryplace
                         </p>
-                        <p className="font-sans-light max-w-3xl mx-auto text-stone-800 leading-relaxed text-lg md:text-xl underline underline-offset-5 decoration-1">
+                        <p className="font-serif-light max-w-3xl mx-auto text-stone-800 leading-relaxed text-lg md:text-xl underline underline-offset-5 decoration-1">
                             <a
                                 href="https://www.google.com/maps/search/?api=1&query=7855+Bethel+Rd+Gainesville+GA+30506"
                                 target="_blank"

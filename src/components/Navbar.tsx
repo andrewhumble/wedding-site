@@ -4,12 +4,14 @@ import { useState, useEffect } from "react";
 import { Burger } from '@mantine/core';
 import { Transition } from '@headlessui/react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import Button from '@/ui/Button';
 import NavItem from "@/components/NavItem";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
 
   // Handle scroll position
   useEffect(() => {
@@ -36,7 +38,7 @@ export default function Navbar() {
   }, [menuOpen]);
 
   function getButtonClassName(isScrolled: boolean, menuOpen: boolean): string {
-    const baseClasses = 'relative top-[1px] font-sans-bold text-md px-6 py-2 flex items-center justify-center';
+    const baseClasses = 'relative top-[1px] font-serif-bold text-md px-6 py-2 flex items-center justify-center';
     const scrolledClasses = 'bg-stone-800 text-[#FAF5F1] hover:bg-[#4a2d33] hover:text-white';
     const defaultClasses = 'bg-[#FAF5F1] text-stone-800 hover:bg-slate-50 hover:text-[#3d232a]';
     const mdClasses = 'md:bg-[#FAF5F1] md:text-stone-800 md:hover:hover:bg-slate-50 md:hover:text-[#3d232a]';
@@ -72,16 +74,18 @@ export default function Navbar() {
             ? 'text-stone-800 md:text-[#FAF5F1]/0'
             : 'text-[#FAF5F1]/0'
           } flex w-fit flex-col items-center justify-center flex-grow`}>
-          <h1 className="text-2xl font-script pr-6 mb-[-11]">The</h1>
-          <h1 className="text-3xl font-sans">Humbles</h1>
+          <h1 className="text-2xl font-script pr-8 mb-[-15]">The</h1>
+          <h1 className="text-3xl font-serif">Humbles</h1>
         </Link>
 
-        {/* RSVP Button */}
-        <Button href="/rsvp" className={getButtonClassName(isScrolled, menuOpen)}>
-          <div className="flex items-center space-x-2 p-0 m-0">
-            <span className="font-sans-bold text-md">RSVP</span>
-          </div>
-        </Button>
+        {/* RSVP Button - Only show if not on /rsvp page */}
+        {pathname !== '/rsvp' && (
+          <Button href="/rsvp" className={getButtonClassName(isScrolled, menuOpen)}>
+            <div className="flex items-center space-x-2 p-0 m-0">
+              <span className="font-serif-bold text-md">RSVP</span>
+            </div>
+          </Button>
+        )}
       </nav>
 
       <Transition
@@ -111,7 +115,7 @@ export default function Navbar() {
           leaveTo="transform -translate-y-full opacity-0"
         >
           <div className="fixed top-0 left-0 w-full h-fit bg-[#FAF5F1] z-40 pt-28 pb-6 px-8 flex flex-col shadow-lg">
-            <nav className="flex flex-col gap-2 text-center font-sans text-xl">
+            <nav className="flex flex-col gap-2 text-center font-serif text-xl">
               <NavItem href="/#details">Details</NavItem>
               <div className="border-t border-gray-300 w-full"></div>
               <NavItem href="/registry">Registry</NavItem>
@@ -134,7 +138,7 @@ export default function Navbar() {
           leaveTo="transform -translate-x-full opacity-0"
         >
           <div className="fixed top-0 left-0 w-1/5 h-full bg-[#FAF5F1] z-40 pt-22 pb-6 px-8 flex flex-col shadow-lg">
-            <nav className="flex flex-col gap-2 text-center font-sans text-xl">
+            <nav className="flex flex-col gap-2 text-center font-serif text-xl">
               <NavItem showActive={true} href="/#details">Details</NavItem>
               <div className="border-t border-gray-300 w-full"></div>
               <NavItem showActive={true} href="/registry">Registry</NavItem>

@@ -25,6 +25,15 @@ export default {
           dark: "#9ca3af", // Dark mode variant
         },
       },
+      keyframes: {
+        fadeOut: {
+          '0%': { opacity: '1' },
+          '100%': { opacity: '0' },
+        },
+      },
+      animation: {
+        fadeOut: 'fadeOut 1s ease-in-out forwards',
+      },
     },
   },
   plugins: [],

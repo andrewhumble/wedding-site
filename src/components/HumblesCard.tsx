@@ -1,17 +1,16 @@
 import Image from 'next/image'
 import DashedBorder from '@/ui/DashedBorder'
+import TheHumblesLogo from './TheHumblesLogo'
 
 export default function HumblesCard() {
     return (
         <div className="flex flex-col md:flex-row">
         {/* Left Panel - Red, striped background with logo */}
-        <div className="mb-[-3] md:mb-0 w-full md:w-1/2 flex flex-col reative bg-[#58373E] h-[60vh] md:h-[calc(100vh-50px)] items-center bg-[url(/images/stripesImproved.png)] bg-[length:50%_100%]">
+        <div className="mb-[-3] md:mb-0 w-full md:w-1/2 flex flex-col relative bg-[#58373E] h-[60vh] md:h-[calc(100vh-50px)] items-center bg-[url(/images/stripesImproved.png)] bg-[length:50%_100%]">
 
           {/* Logo container */}
-          <div className="text-white flex w-fit flex-col items-center justify-center flex-grow md:mb-10">
-            <h1 className="text-5xl font-script pr-12 mb-[-6]">The</h1>
-            <h1 className="text-6xl font-sans">Humbles</h1>
-            <h1 className="text-2xl font-sans-light mt-[-7] pr-1 self-end">4.18.26</h1>
+          <div className="flex w-fit flex-col items-center justify-center flex-grow md:mb-10">
+            <TheHumblesLogo />
           </div>
         </div>
 
