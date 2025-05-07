@@ -21,7 +21,7 @@ export default function DrawnText() {
             tl.fromTo(
                 pathRef.current,
                 { drawSVG: '0% 0%' },
-                { drawSVG: '0% 100%', duration: 3.25, ease: '' }
+                { drawSVG: '0% 100%', duration: 3, ease: 'power2.inOut' }
             )
             .fromTo(
                 [bordersRef.current, textRef.current],
