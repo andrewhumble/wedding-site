@@ -10,7 +10,7 @@ export default function HumblesCard() {
 
           {/* Logo container */}
           <div className="flex w-fit flex-col items-center justify-center flex-grow md:mb-10">
-            <TheHumblesLogo />
+            <TheHumblesLogo height='250px' width='w-64 md:w-72' />
           </div>
         </div>
 

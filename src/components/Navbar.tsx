@@ -3,10 +3,10 @@
 import { useState, useEffect } from "react";
 import { Burger } from '@mantine/core';
 import { Transition } from '@headlessui/react'
-import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import Button from '@/ui/Button';
 import NavItem from "@/components/NavItem";
+import TheHumblesLogo from "./TheHumblesLogo";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -72,17 +72,7 @@ export default function Navbar() {
           title="test"
         />
 
-        <Link href="/" className={`${isScrolled
-          ? menuOpen
-            ? 'text-stone-800 md:text-stone-800/0'
-            : 'text-stone-800'
-          : menuOpen
-            ? 'text-stone-800 md:hidden'
-            : 'hidden'
-          } flex w-fit flex-col items-center justify-center flex-grow`}>
-          <h1 className="text-2xl font-script pr-8 mb-[-15]">The</h1>
-          <h1 className="text-3xl font-serif">Humbles</h1>
-        </Link>
+        <TheHumblesLogo className={`${isScrolled && !menuOpen ? 'block' : 'hidden'}`} height='44px' width='w-36' fill={`${isScrolled ? '#000000' : '#ffffff'}`} />
 
         {/* RSVP Button - Only show if not on /rsvp page */}
         {pathname !== '/rsvp' && (
