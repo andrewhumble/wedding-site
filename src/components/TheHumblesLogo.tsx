@@ -50,38 +50,30 @@ export default function TheHumblesLogo({ height = '300px', width = '400px', bord
                             id="path7" />
                     </g>
                 </g>
-                <text ref={textRef}
+                <text 
+                    ref={textRef}
                     style={{
                         fontStyle: 'normal',
                         fontVariant: 'normal',
                         fontWeight: 'normal',
                         fontStretch: 'normal',
                         fontSize: '92.5px',
-                        fontFamily: 'ofelia-text',
+                        fontFamily: 'sans-text',
                         textAlign: 'start',
                         direction: 'ltr',
                         textAnchor: 'middle',
-                        fill: 'none',
+                        fill: fill,
+                        fillOpacity: 1,
                         stroke: fill,
                         strokeWidth: '2.12774',
                         strokeDasharray: 'none',
+                        strokeOpacity: 1
                     }}
-                    x="219.15" y="156.13664" id="text7">
-                    <tspan
-                        style={{
-                            fontStyle: 'normal',
-                            fontVariant: 'normal',
-                            fontWeight: 'normal',
-                            fontStretch: 'normal',
-                            fontFamily: 'ofelia-text',
-                            fill: fill,
-                            fillOpacity: 1,
-                            stroke: fill,
-                            strokeWidth: '2.12774',
-                            strokeDasharray: 'none',
-                            strokeOpacity: 1
-                        }}
-                        x="219.15" y="140">HUMBLES</tspan>
+                    x="219.15" 
+                    y="140"
+                    id="text7"
+                >
+                    HUMBLES
                 </text>
             </g>
         </svg>

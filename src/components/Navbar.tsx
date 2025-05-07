@@ -72,16 +72,17 @@ export default function Navbar() {
           title="test"
         />
 
-        <TheHumblesLogo pathOpacity={isScrolled && !menuOpen ? 1 : 0} height='44px' width='w-36' fill={`${isScrolled ? '#000000' : ''}`} />
+        {/* Logo Container */}
+        <div className="absolute left-1/2 transform -translate-x-1/2">
+          <TheHumblesLogo pathOpacity={isScrolled && !menuOpen ? 1 : 0} height='44px' width='w-36' fill={`${isScrolled ? '#000000' : ''}`} />
+        </div>
 
         {/* RSVP Button - Only show if not on /rsvp page */}
-        {pathname !== '/rsvp' && (
-          <Button href="/rsvp" className={getButtonClassName(isScrolled, menuOpen)}>
-            <div className="flex items-center space-x-2 p-0 m-0">
-              <span className="text-lg">RSVP</span>
-            </div>
-          </Button>
-        )}
+        <Button href="/rsvp" className={`${getButtonClassName(isScrolled, menuOpen)} ${pathname === '/rsvp' ? 'hidden' : ''}`}>
+          <div className="flex items-center space-x-2 p-0 m-0">
+            <span className="text-lg">RSVP</span>
+          </div>
+        </Button>
       </nav>
 
       <Transition
