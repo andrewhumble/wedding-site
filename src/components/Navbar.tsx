@@ -7,11 +7,13 @@ import { usePathname } from 'next/navigation'
 import Button from '@/ui/Button';
 import NavItem from "@/components/NavItem";
 import TheHumblesLogo from "./TheHumblesLogo";
+import { useMediaQuery } from "@mantine/hooks";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+  const isMobile = useMediaQuery('(max-width: 768px)');
 
   // Handle scroll position
   useEffect(() => {
@@ -60,6 +62,14 @@ export default function Navbar() {
       : `${baseClasses} ${defaultClasses}`;
   }
 
+  const getLogoOpacity = () => {
+    if (isMobile) {
+      return isScrolled || menuOpen ? 1 : 0;
+    } else {
+      return isScrolled && !menuOpen ? 1 : 0;
+    }
+  };
+
   return (
     <>
       <nav className={`fixed w-full z-50 flex justify-between items-center py-4 px-6 transition-colors duration-400 ${isScrolled && !menuOpen ? 'bg-secondary' : 'bg-transparent'}`}>
@@ -74,7 +84,7 @@ export default function Navbar() {
 
         {/* Logo Container */}
         <div className="absolute left-1/2 transform -translate-x-1/2">
-          <TheHumblesLogo pathOpacity={isScrolled && !menuOpen ? 1 : 0} height='44px' width='w-36' fill={`${isScrolled ? '#000000' : ''}`} />
+          <TheHumblesLogo pathOpacity={`${getLogoOpacity()}`} height='44px' width='w-36' fill={`${isScrolled ? '#000000' : ''}`} />
         </div>
 
         {/* RSVP Button - Only show if not on /rsvp page */}
@@ -111,7 +121,7 @@ export default function Navbar() {
           leaveFrom="transform translate-y-0 opacity-100"
           leaveTo="transform -translate-y-full opacity-0"
         >
-          <div className="fixed top-0 left-0 w-full h-fit bg-secondary z-40 pt-28 pb-6 px-8 flex flex-col shadow-lg">
+          <div className="fixed top-0 left-0 w-full h-fit bg-secondary z-40 pt-24 pb-6 px-8 flex flex-col shadow-lg">
             <nav className="flex flex-col gap-2 text-center font-serif text-xl">
               <NavItem href="/" onClick={handleNavigation}>Details</NavItem>
               <div className="border-t border-gray-300 w-full"></div>

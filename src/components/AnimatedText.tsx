@@ -33,6 +33,6 @@ export default function DrawnText() {
     }, []);
 
     return (
-        <TheHumblesLogo height='300px' width='w-3/4 md:w-1/4' bordersRef={bordersRef} pathRef={pathRef} textRef={textRef} pathOpacity={pathOpacity} />
+        <TheHumblesLogo height='300px' width='w-3/5 md:w-1/4' bordersRef={bordersRef} pathRef={pathRef} textRef={textRef} pathOpacity={pathOpacity} />
     );
 }
