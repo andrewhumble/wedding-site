@@ -72,7 +72,7 @@ export default function Navbar() {
           title="test"
         />
 
-        <TheHumblesLogo className={`${isScrolled && !menuOpen ? 'block' : 'hidden'}`} height='44px' width='w-36' fill={`${isScrolled ? '#000000' : '#ffffff'}`} />
+        <TheHumblesLogo pathOpacity={isScrolled && !menuOpen ? 1 : 0} height='44px' width='w-36' fill={`${isScrolled ? '#000000' : ''}`} />
 
         {/* RSVP Button - Only show if not on /rsvp page */}
         {pathname !== '/rsvp' && (

@@ -4,8 +4,8 @@ export default {
   darkMode: 'class',
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -13,11 +13,11 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: {
-          DEFAULT: "#101827", // Default color (light mode)
+          DEFAULT: "#58373E", // Default color (light mode)
           dark: "#FFFFFF", // Dark mode variant
         },
         secondary: {
-          DEFAULT: "#52525B", // Default color (light mode)
+          DEFAULT: "#FAF5F1", // Default color (light mode)
           dark: "#71717A", // Dark mode variant
         },
         tertiary: {

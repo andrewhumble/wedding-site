@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary: #58373E;
+  --color-secondary: #FAF5F1;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -40,12 +45,4 @@ html, body {
 .font-serif-bold {
   font-family: 'EB Garamond', serif;
   font-weight: 600;
-}
-
-.bg-primary {
-  background-color: #58373E;
-}
-
-.bg-secondary {
-  background-color: #FAF5F1;
 }
