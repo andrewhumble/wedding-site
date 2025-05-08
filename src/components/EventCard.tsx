@@ -53,15 +53,45 @@ export default function EventCard({ className }: EventCardProps) {
                                 7855 Bethel Rd, Gainesville, GA, 30506
                             </a>
                         </p>
+                        <div className="absolute right-0 top-[-32] md:top-[-65] pointer-events-none w-[120px] h-[168px] md:w-[220px] md:h-[320px]">
+                            <Image
+                                src="/images/toprightflowers.png"
+                                alt="Decorative flowers"
+                                fill
+                                className="object-contain"
+                            />
+                        </div>
+                        <div className="absolute left-0 top-[-32] md:top-[-65] pointer-events-none w-[120px] h-[168px] md:w-[220px] md:h-[320px]">
+                            <Image
+                                src="/images/toprightflowers.png"
+                                alt="Decorative flowers"
+                                fill
+                                className="object-contain"
+                                style={{
+                                    transform: 'scaleX(-1)'
+                                }}
+                            />
+                        </div>
+                        <div className="absolute left-0 bottom-[-35] md:bottom-[-70] pointer-events-none w-[120px] h-[168px] md:w-[220px] md:h-[320px]">
+                            <Image
+                                src="/images/bottomleftflowers.png"
+                                alt="Decorative flowers"
+                                fill
+                                className="object-contain"
+                            />
+                        </div>
+                        <div className="absolute right-0 bottom-[-35] md:bottom-[-70] pointer-events-none w-[120px] h-[168px] md:w-[220px] md:h-[320px]">
+                            <Image
+                                src="/images/bottomleftflowers.png"
+                                alt="Decorative flowers"
+                                fill
+                                className="object-contain"
+                                style={{
+                                    transform: 'scaleX(-1)'
+                                }}
+                            />
+                        </div>
                     </DoubleBorderCard>
-                    {/* <div className="absolute right-[-10] top-[-70] md:right-[-15] md:top-[-135] pointer-events-none w-[120px] h-[168px] md:w-[220px] md:h-[320px]">
-                        <Image
-                            src="/images/hydrangea.png"
-                            alt="Decorative flowers"
-                            fill
-                            className="object-contain"
-                        />
-                    </div> */}
                 </div>
             </section>
         </div>
