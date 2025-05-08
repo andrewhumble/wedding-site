@@ -1,12 +1,13 @@
 import Button from '@/ui/Button'
 import Image from 'next/image'
 import PageLayout from '@/components/PageLayout'
+import DoubleBorderCard from '@/ui/DoubleBorderCard';
 
 export default function Registry() {
     return (
         <PageLayout title="Registry">
             <div className="relative max-w-6xl mx-auto px-6 md:px-16">
-                <div className="bg-white border-1 border-stone-800 pb-14 px-6 py-20 md:px-12 flex flex-col items-center text-start relative overflow-hidden">
+                <DoubleBorderCard>
                     <h1 className="max-w-3xl text-xl md:text-2xl font-serif text-stone-800 mb-10">Many of you are traveling from far and wide to celebrate with us, so your presence means the world and is all we ask for. If you&apos;d still like to contribute to our registry or honeymoon funds, please use the links below.</h1>
                     <div className="flex justify-center">
                         <Button
@@ -25,7 +26,7 @@ export default function Registry() {
                             </div>
                         </Button>
                     </div>
-                </div>
+                </DoubleBorderCard>
             </div>
         </PageLayout>
     );

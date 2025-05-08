@@ -46,7 +46,7 @@ export default function Navbar() {
   };
 
   function getButtonClassName(isScrolled: boolean, menuOpen: boolean): string {
-    const baseClasses = 'relative top-[1px] font-serif-bold text-md px-6 py-2 flex items-center justify-center';
+    const baseClasses = 'relative top-[1px] font-serif-bold text-md px-4 py-2 flex items-center justify-center';
     const scrolledClasses = 'bg-stone-800 text-white hover:bg-[#4a2d33] hover:text-white';
     const defaultClasses = 'bg-secondary text-stone-800 hover:bg-slate-50 hover:text-[#3d232a]';
     const mdClasses = 'md:bg-secondary md:text-stone-800 md:hover:hover:bg-slate-50 md:hover:text-[#3d232a]';
@@ -83,8 +83,8 @@ export default function Navbar() {
         />
 
         {/* Logo Container */}
-        <div className="absolute left-1/2 transform -translate-x-1/2">
-          <TheHumblesLogo pathOpacity={`${getLogoOpacity()}`} height='44px' width='w-36' fill={`${isScrolled ? '#000000' : ''}`} />
+        <div className="absolute left-1/2 transform -translate-x-1/2 mt-1">
+          <TheHumblesLogo pathOpacity={getLogoOpacity()} height='44px' width='w-36' fill={`${isScrolled || menuOpen ? '#000000' : ''}`} />
         </div>
 
         {/* RSVP Button - Only show if not on /rsvp page */}

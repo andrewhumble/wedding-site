@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #58373E;
+  --color-primary: #6C444C; /* #58373E */
   --color-secondary: #FAF5F1;
 }
 
@@ -28,21 +28,21 @@ html, body {
 }
 
 .font-serif {
-  font-family: 'EB Garamond', serif;
+  font-family: serif;
   font-weight: 400;
 }
 
 .font-serif-italic {
-  font-family: 'EB Garamond', serif;
+  font-family: serif;
   font-style: italic;
 }
 
 .font-serif-light {
-  font-family: 'EB Garamond', serif;
-  font-weight: 400;
+  font-family: serif;
+  font-weight: 200;
 }
 
 .font-serif-bold {
-  font-family: 'EB Garamond', serif;
+  font-family: serif;
   font-weight: 600;
 }

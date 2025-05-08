@@ -1,4 +1,4 @@
-import DashedBorder from '@/ui/DashedBorder'
+import ScallopBorder from '@/components/ScallopBorder';
 
 interface PageLayoutProps {
     title: string;
@@ -13,7 +13,7 @@ export default function PageLayout({ title, children }: PageLayoutProps) {
                     <h1 className="text-4xl font-serif-bold tracking-wider text-white">{title}</h1>
                 </div>
             </div>
-            <DashedBorder className="hidden relative md:flex items-center mt-[-3] mb-[-3] z-10" />
+            <ScallopBorder className="relative z-10" />
             <section className="relative w-full py-16">
                 {children}
             </section>

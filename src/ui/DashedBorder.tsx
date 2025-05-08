@@ -11,7 +11,7 @@ export default function DashedBorder({ length = 40, className }: DashedBorderPro
           key={index}
           className="w-20 h-1.5 bg-white"
           style={{ transform: `translateY(${index % 2 === 0 ? 3 : -3}px)` }}
-        /> 
+        />
       ))}
     </div>
   );

@@ -1,5 +1,5 @@
-import DashedBorder from '@/ui/DashedBorder'
 import Image from 'next/image';
+import ScallopBorder from './ScallopBorder';
 
 interface GalleryCardProps {
     className?: string;
@@ -30,7 +30,7 @@ export default function GalleryCard({ className }: GalleryCardProps) {
                     />
                 </div>
             </section>
-            <DashedBorder length={10} className="md:hidden relative flex items-center mt-[-3] mb-[-3] z-10" />
+            <ScallopBorder className="relative z-10" />
         </div>
     )
 }

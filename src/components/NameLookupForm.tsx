@@ -26,7 +26,7 @@ export function NameLookupForm({ onSubmit, isLoading, error }: NameLookupFormPro
                         type="text"
                         name="name"
                         required
-                        className={`w-full px-4 py-2 border ${error ? 'border-red-500' : 'border-stone-300'} rounded-md bg-white text-stone-800`}
+                        className={`w-full px-4 py-2 border ${error ? 'border-red-500' : 'border-stone-300'} rounded-md bg-white text-stone-800 focus:outline-none focus:ring-2 focus:ring-secondary`}
                     />
                     {error && (
                         <p className="mt-2 text-sm text-red-500">{error}</p>

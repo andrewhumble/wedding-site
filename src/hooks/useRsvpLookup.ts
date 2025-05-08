@@ -22,10 +22,11 @@ export function useRsvpLookup({ onPartySelected }: UseRsvpLookupProps) {
                     data.partyIds.map(async (id: string) => {
                         const partyRes = await fetch(`/api/lookup?partyId=${id}`)
                         const partyData = await partyRes.json()
-                        return { id, guests: partyData.guests }
+                        return { id, guests: partyData.guests, party: partyData.party }
                     })
                 )
-                if (parties.length > 1) {
+                const uniqueParties = [...new Set(parties.map(p => p.party))];
+                if (uniqueParties.length > 1) {
                     setAvailableParties(parties)
                 } else {
                     onPartySelected(parties[0])
