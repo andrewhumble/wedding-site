@@ -8,12 +8,14 @@ import Button from '@/ui/Button';
 import NavItem from "@/components/NavItem";
 import TheHumblesLogo from "./TheHumblesLogo";
 import { useMediaQuery } from "@mantine/hooks";
+import { useFeatureFlag } from "@/hooks/useFeatureFlag";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
   const isMobile = useMediaQuery('(max-width: 768px)');
+  const showRsvpButton = useFeatureFlag('showRsvpButton');
 
   // Handle scroll position
   useEffect(() => {
@@ -87,12 +89,14 @@ export default function Navbar() {
           <TheHumblesLogo pathOpacity={getLogoOpacity()} height='44px' width='w-36' fill={`${isScrolled || menuOpen ? '#000000' : ''}`} />
         </div>
 
-        {/* RSVP Button - Only show if not on /rsvp page */}
-        <Button href="/rsvp" className={`${getButtonClassName(isScrolled, menuOpen)} ${pathname === '/rsvp' ? 'hidden' : ''}`}>
-          <div className="flex items-center space-x-2 p-0 m-0">
-            <span className="text-lg">RSVP</span>
-          </div>
-        </Button>
+        {/* RSVP Button - Only show if feature flag is enabled and not on /rsvp page */}
+        {showRsvpButton && (
+          <Button href="/rsvp" className={`${getButtonClassName(isScrolled, menuOpen)} ${pathname === '/rsvp' ? 'hidden' : ''}`}>
+            <div className="flex items-center space-x-2 p-0 m-0">
+              <span className="text-lg">RSVP</span>
+            </div>
+          </Button>
+        )}
       </nav>
 
       <Transition

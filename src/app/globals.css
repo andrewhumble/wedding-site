@@ -5,6 +5,27 @@
   --color-secondary: #FAF5F1;
 }
 
+@font-face {
+  font-family: 'ScriptFont';
+  src: url('/fonts/Script Font Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ScriptFontBold';
+  src: url('/fonts/Bickham Script Pro Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BodoniFont';
+  src: url('/fonts/Bodoni Std Book.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -24,12 +45,15 @@ html, body {
 }
 
 .font-script {
-  font-family: 'MonteCarlo', cursive;
+  font-family: 'ScriptFont';
+}
+
+.font-script-bold {
+  font-family: 'ScriptFontBold';
 }
 
 .font-serif {
-  font-family: serif;
-  font-weight: 400;
+  font-family: 'BodoniFont';
 }
 
 .font-serif-italic {
