@@ -18,7 +18,7 @@ export default function NavItem({ href, showActive = false, children, onClick }:
             return `${baseClasses} text-stone-400 cursor-default`;
         }
 
-        return `${baseClasses} text-gray-800 hover:text-stone-500`;
+        return `${baseClasses} text-stone-800 hover:text-stone-500`;
     };
 
     // Active link check

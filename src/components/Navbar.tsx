@@ -129,9 +129,11 @@ export default function Navbar() {
             <nav className="flex flex-col gap-2 text-center font-serif text-xl">
               <NavItem href="/" onClick={handleNavigation}>Details</NavItem>
               <div className="border-t border-gray-300 w-full"></div>
+              <NavItem href="/gallery" onClick={handleNavigation}>Gallery</NavItem>
+              <div className="border-t border-gray-300 w-full"></div>
               <NavItem href="/registry" onClick={handleNavigation}>Registry</NavItem>
               <div className="border-t border-gray-300 w-full"></div>
-              <NavItem href="/gallery" onClick={handleNavigation}>Gallery</NavItem>
+              <NavItem href="/faq" onClick={handleNavigation}>FAQ</NavItem>
             </nav>
           </div>
         </Transition>
@@ -152,9 +154,11 @@ export default function Navbar() {
             <nav className="flex flex-col gap-2 text-center font-serif text-xl">
               <NavItem showActive={true} href="/" onClick={handleNavigation}>Details</NavItem>
               <div className="border-t border-gray-300 w-full"></div>
+              <NavItem showActive={true} href="/gallery" onClick={handleNavigation}>Gallery</NavItem>
+              <div className="border-t border-gray-300 w-full"></div>
               <NavItem showActive={true} href="/registry" onClick={handleNavigation}>Registry</NavItem>
               <div className="border-t border-gray-300 w-full"></div>
-              <NavItem showActive={true} href="/gallery" onClick={handleNavigation}>Gallery</NavItem>
+              <NavItem showActive={true} href="/faq" onClick={handleNavigation}>FAQ</NavItem>
             </nav>
           </div>
         </Transition>

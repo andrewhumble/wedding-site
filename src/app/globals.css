@@ -19,9 +19,16 @@
   font-style: normal;
 }
 
-@font-face {
+/* @font-face {
   font-family: 'BodoniFont';
   src: url('/fonts/Bodoni Std Book.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+} */
+
+@font-face {
+  font-family: 'EBGaramondFont';
+  src: url('/fonts/EBGaramond-VariableFont_wght.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -53,7 +60,7 @@ html, body {
 }
 
 .font-serif {
-  font-family: 'BodoniFont';
+  font-family: 'EBGaramondFont';
 }
 
 .font-serif-italic {

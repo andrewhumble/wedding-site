@@ -9,20 +9,23 @@ export default function GalleryCard({ className }: GalleryCardProps) {
     return (
         <div className={className}>
             <section className="relative w-full bg-primary py-24 px-24 flex flex-col items-center bg-[url(/images/stripesImproved.png)] bg-[length:50%_100%] md:bg-[length:25%_100%]">
-                <div className="flex flex-col md:flex-row gap-24">
+                <div className="flex flex-col md:flex-row gap-4">
                     <Image
+                        className="h-full w-full object-cover rounded-lg border-1 border-stone-800" 
                         src="/images/pose.jpg"
                         alt="Your Photo"
                         width={300}
                         height={300}
                     />
                     <Image
+                        className="h-full w-full object-cover rounded-lg border-1 border-stone-800" 
                         src="/images/closeup.jpg"
                         alt="Your Photo"
                         width={300}
                         height={300}
                     />
                     <Image
+                        className="h-full w-full object-cover rounded-lg border-1 border-stone-800" 
                         src="/images/hugging.jpg"
                         alt="Your Photo"
                         width={300}

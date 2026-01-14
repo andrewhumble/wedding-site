@@ -8,7 +8,7 @@ export default function Registry() {
         <PageLayout title="Registry">
             <div className="relative max-w-6xl mx-auto px-6 md:px-16">
                 <DoubleBorderCard>
-                    <h1 className="max-w-3xl text-xl md:text-2xl font-serif text-stone-800 mb-8">Many of you are traveling from far and wide to celebrate with us, so your presence means the world and is all we ask for. If you&apos;d still like to contribute to our registry or honeymoon funds, please use the links below.</h1>
+                    <h1 className="max-w-3xl text-xl md:text-2xl font-serif text-stone-800 mb-10">Your presence is a gift to us, but if you&apos;d like to help us start our lives as newlyweds, we are registered at the following places.</h1>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
                         <Button
                             href="https://www.amazon.com/wedding/share/thehumbles"
