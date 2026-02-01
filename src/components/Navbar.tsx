@@ -48,7 +48,7 @@ export default function Navbar() {
   };
 
   function getButtonClassName(isScrolled: boolean, menuOpen: boolean): string {
-    const baseClasses = 'relative top-[1px] font-serif-bold text-md px-4 py-2 flex items-center justify-center';
+    const baseClasses = 'relative top-[1px] font-serif font-bold text-md px-4 py-2 flex items-center justify-center tracking-wide';
     const scrolledClasses = 'bg-stone-800 text-white hover:bg-[#4a2d33] hover:text-white';
     const defaultClasses = 'bg-secondary text-stone-800 hover:bg-slate-50 hover:text-[#3d232a]';
     const mdClasses = 'md:bg-secondary md:text-stone-800 md:hover:hover:bg-slate-50 md:hover:text-[#3d232a]';
@@ -74,7 +74,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`fixed w-full z-50 flex justify-between items-center py-4 px-6 transition-colors duration-400 ${isScrolled && !menuOpen ? 'bg-secondary' : 'bg-transparent'}`}>
+      <nav className={`fixed tracking w-full z-50 flex justify-between items-center py-4 px-6 transition-colors duration-400 ${isScrolled && !menuOpen ? 'bg-secondary' : 'bg-transparent'}`}>
         {/* Menu Button */}
         <Burger
           opened={menuOpen}

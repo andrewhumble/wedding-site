@@ -7,6 +7,7 @@ interface ButtonProps {
     href?: string;
     target?: string;
     children: React.ReactNode;
+    style?: React.CSSProperties;
 }
 
 const getBaseClassName = (className?: string) => 
@@ -15,7 +16,7 @@ const getBaseClassName = (className?: string) =>
 const getAriaLabel = (children: React.ReactNode) => 
     typeof children === 'string' ? children : undefined;
 
-export default function Button({ className, onClick, href, target = "_self", children }: ButtonProps) {
+export default function Button({ className, onClick, href, target = "_self", children, style }: ButtonProps) {
     const baseClassName = getBaseClassName(className);
     const ariaLabel = getAriaLabel(children);
 
@@ -28,6 +29,7 @@ export default function Button({ className, onClick, href, target = "_self", chi
                     rel="noopener noreferrer"
                     className={baseClassName}
                     aria-label={ariaLabel}
+                    style={style}
                 >
                     {children}
                 </Link>
@@ -39,6 +41,7 @@ export default function Button({ className, onClick, href, target = "_self", chi
                 target={target}
                 className={baseClassName}
                 aria-label={ariaLabel}
+                style={style}
             >
                 {children}
             </Link>
@@ -50,6 +53,7 @@ export default function Button({ className, onClick, href, target = "_self", chi
             onClick={onClick}
             className={baseClassName}
             aria-label={ariaLabel}
+            style={style}
         >
             {children}
         </button>

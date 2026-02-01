@@ -60,7 +60,7 @@ export default function RSVP() {
                         {isSubmitted ? (
                             <div className="text-center space-y-6">
                                 <h2 className="text-2xl font-serif text-stone-800">Thank You!</h2>
-                                <p className="text-stone-600">Your RSVP has been submitted successfully. We look forward to celebrating with you!</p>
+                                <p className="text-stone-600 font-serif">Your RSVP has been submitted successfully. We look forward to celebrating with you!</p>
                             </div>
                         ) : !partyId || isLoading ? (
                             <>

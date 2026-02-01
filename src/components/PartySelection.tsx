@@ -19,7 +19,7 @@ export function PartySelection({ parties, onSelect }: PartySelectionProps) {
                         <p className="font-serif text-stone-800">Party Members:</p>
                         <ul className="mt-2 space-y-1">
                             {party.guests.map(guest => (
-                                <li key={guest.id} className="text-stone-600">{guest.full_name}</li>
+                                <li key={guest.id} className="text-stone-600">{guest.title ? `${guest.title} ${guest.full_name}` : guest.full_name}</li>
                             ))}
                         </ul>
                     </div>

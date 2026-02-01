@@ -5,10 +5,18 @@ interface UseRsvpLookupProps {
     onPartySelected: (party: Party) => void;
 }
 
+// Error message identifiers
+export const ERROR_MESSAGES = {
+    NOT_FOUND: 'NOT_FOUND',
+    GENERIC_ERROR: 'GENERIC_ERROR',
+} as const
+
+export type ErrorMessageType = keyof typeof ERROR_MESSAGES | string
+
 export function useRsvpLookup({ onPartySelected }: UseRsvpLookupProps) {
     const [availableParties, setAvailableParties] = useState<Party[]>([])
     const [isLoading, setIsLoading] = useState(false)
-    const [error, setError] = useState<string | null>(null)
+    const [error, setError] = useState<ErrorMessageType | null>(null)
 
     const handleNameLookup = async (name: string) => {
         setError(null)
@@ -32,10 +40,10 @@ export function useRsvpLookup({ onPartySelected }: UseRsvpLookupProps) {
                     onPartySelected(parties[0])
                 }
             } else {
-                setError('Hmm... we can\'t find your name. Make sure you enter your name exactly as it appears on your invitation.')
+                setError(ERROR_MESSAGES.NOT_FOUND)
             }
         } catch {
-            setError('An error occurred while looking up your name. Please try again.')
+            setError(ERROR_MESSAGES.GENERIC_ERROR)
         } finally {
             setIsLoading(false)
         }

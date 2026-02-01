@@ -7,6 +7,7 @@ import { createClient } from '@/lib/supabaseClient'
 interface RSVP {
   guest_id: string;
   status: string;
+  meal_preference?: string | null;
 }
 
 export async function POST(req: Request) {
@@ -14,10 +15,14 @@ export async function POST(req: Request) {
   const { rsvps } = await req.json()
   const supabase = await createClient();
 
-  const updates = rsvps.map(({ guest_id, status }: RSVP) =>
+  const updates = rsvps.map(({ guest_id, status, meal_preference }: RSVP) =>
     supabase
       .from('guests')
-      .update({ rsvp_status: status, rsvp_date: new Date().toISOString() })
+      .update({ 
+        rsvp_status: status, 
+        rsvp_date: new Date().toISOString(),
+        meal_preference: meal_preference 
+      })
       .eq('id', guest_id)
   )
 

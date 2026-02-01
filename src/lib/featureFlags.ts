@@ -9,7 +9,7 @@ export const featureFlags = {
   /**
    * Show the RSVP button in the navigation bar
    */
-  showRsvpButton: false,
+  showRsvpButton: true,
 } as const;
 
 export type FeatureFlag = keyof typeof featureFlags;

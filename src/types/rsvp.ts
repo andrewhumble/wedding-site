@@ -1,5 +1,6 @@
 export interface Guest {
     id: string;
+    title?: string;
     full_name: string;
     email?: string;
     rsvp_status?: string;

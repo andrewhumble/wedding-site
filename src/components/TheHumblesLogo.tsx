@@ -52,13 +52,9 @@ export default function TheHumblesLogo({ height = '300px', width = '400px', bord
                 </g>
                 <text 
                     ref={textRef}
+                    className="font-serif"
                     style={{
-                        fontStyle: 'normal',
-                        fontVariant: 'normal',
-                        fontWeight: 'light',
-                        fontStretch: 'normal',
                         fontSize: '92.5px',
-                        fontFamily: 'serif',
                         textAlign: 'start',
                         direction: 'ltr',
                         textAnchor: 'middle',

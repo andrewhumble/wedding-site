@@ -12,7 +12,7 @@ export function ExistingRsvpDisplay({ party, onEdit }: ExistingRsvpDisplayProps)
             <div className="py-4 px-4 border-1 border-stone-400 rounded-md">
                 {party.map(guest => (
                     <div key={guest.id} className="flex justify-between items-center">
-                        <span className="text-stone-800">{guest.full_name}</span>
+                        <span className="text-stone-800">{guest.title ? `${guest.title} ${guest.full_name}` : guest.full_name}</span>
                         <span className={`${guest.rsvp_status === 'yes' ? 'text-green-600' : 'text-red-600'}`}>
                             {guest.rsvp_status === 'yes' ? 'Attending' : 'Not Attending'}
                         </span>
