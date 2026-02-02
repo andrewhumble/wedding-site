@@ -16,7 +16,14 @@ export default function RsvpForm({ partyId, initialParty, onSuccess }: RsvpFormP
       return acc
     }, {})
   })
-  const [mealPreferences, setMealPreferences] = useState<Record<string, 'Beef' | 'Chicken'>>({});
+  const [mealPreferences, setMealPreferences] = useState<Record<string, 'Beef' | 'Chicken'>>(() => {
+    return initialParty.reduce((acc: Record<string, 'Beef' | 'Chicken'>, guest: Guest) => {
+      if (guest.meal_preference) {
+        acc[guest.id] = guest.meal_preference
+      }
+      return acc
+    }, {})
+  });
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()

@@ -5,6 +5,7 @@ export interface Guest {
     email?: string;
     rsvp_status?: string;
     rsvp_date?: string;
+    meal_preference?: 'Beef' | 'Chicken';
 }
 
 export interface Party {
