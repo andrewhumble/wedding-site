@@ -6,6 +6,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import InitialFadeIn from "@/components/InitialFadeIn";
+import { Analytics } from "@vercel/analytics/next"
 // import Banner from "@/components/Banner";
 
 const cormorantGaramond = Cormorant_Garamond({
@@ -53,6 +54,7 @@ export default function RootLayout({
           {children}
         </MantineProvider>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
