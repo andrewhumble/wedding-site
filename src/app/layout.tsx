@@ -6,6 +6,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import InitialFadeIn from "@/components/InitialFadeIn";
+// import Banner from "@/components/Banner";
 
 const cormorantGaramond = Cormorant_Garamond({
   subsets: ['latin'],
@@ -42,6 +43,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${cormorantGaramond.variable} ${ebGaramond.variable} ${monteCarlo.variable}`}>
       <body className="bg-secondary">
+        {/* <Banner
+          message="Kindly RSVP by the 15th of March"
+          id="rsvp-deadline"
+        /> */}
         <MantineProvider>
           <Navbar />
           <InitialFadeIn />

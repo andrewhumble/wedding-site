@@ -74,7 +74,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`fixed tracking w-full z-50 flex justify-between items-center py-4 px-6 transition-colors duration-400 ${isScrolled && !menuOpen ? 'bg-secondary' : 'bg-transparent'}`}>
+      <nav style={{ top: 'var(--banner-height, 0px)' }} className={`fixed tracking w-full z-50 flex justify-between items-center py-4 px-6 transition-colors duration-400 ${isScrolled && !menuOpen ? 'bg-secondary' : 'bg-transparent'}`}>
         {/* Menu Button */}
         <Burger
           opened={menuOpen}
@@ -125,7 +125,7 @@ export default function Navbar() {
           leaveFrom="transform translate-y-0 opacity-100"
           leaveTo="transform -translate-y-full opacity-0"
         >
-          <div className="fixed top-0 left-0 w-full h-fit bg-secondary z-40 pt-24 pb-6 px-8 flex flex-col shadow-lg">
+          <div style={{ top: 'var(--banner-height, 0px)' }} className="fixed left-0 w-full h-fit bg-secondary z-40 pt-24 pb-6 px-8 flex flex-col shadow-lg">
             <nav className="flex flex-col gap-2 text-center font-serif text-xl">
               <NavItem href="/" onClick={handleNavigation}>Details</NavItem>
               <div className="border-t border-gray-300 w-full"></div>
@@ -150,7 +150,7 @@ export default function Navbar() {
           leaveFrom="transform translate-x-0 opacity-100"
           leaveTo="transform -translate-x-full opacity-0"
         >
-          <div className="fixed top-0 left-0 w-1/5 h-full bg-secondary z-40 pt-22 pb-6 px-8 flex flex-col shadow-lg">
+          <div style={{ top: 'var(--banner-height, 0px)' }} className="fixed left-0 w-1/5 h-full bg-secondary z-40 pt-22 pb-6 px-8 flex flex-col shadow-lg">
             <nav className="flex flex-col gap-2 text-center font-serif text-xl">
               <NavItem showActive={true} href="/" onClick={handleNavigation}>Details</NavItem>
               <div className="border-t border-gray-300 w-full"></div>
