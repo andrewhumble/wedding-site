@@ -33,9 +33,26 @@ export default function RsvpForm({ partyId, initialParty, onSuccess }: RsvpFormP
       meal_preference: responses[g.id] === 'yes' ? mealPreferences[g.id] : null,
     }))
 
+    const titlePrecedence = (title: string | null | undefined): number => {
+      if (!title) return 4
+      const t = title.toLowerCase()
+      if (t.includes('dr')) return 0
+      if (t.includes('mr.') && !t.includes('mrs')) return 1
+      if (t.includes('mrs') || t.includes('ms')) return 2
+      return 3
+    }
+
+    const sortedGuests = [...initialParty].sort(
+      (a, b) => titlePrecedence(a.title) - titlePrecedence(b.title)
+    )
+
+    const guestNames = sortedGuests
+      .map((g) => (g.title ? `${g.title} ${g.full_name}` : g.full_name))
+      .join(' & ')
+
     const res = await fetch('/api/rsvp', {
       method: 'POST',
-      body: JSON.stringify({ party_id: partyId, rsvps, email }),
+      body: JSON.stringify({ party_id: partyId, rsvps, email, guestNames }),
     })
 
     if (res.ok) {
@@ -122,7 +139,7 @@ export default function RsvpForm({ partyId, initialParty, onSuccess }: RsvpFormP
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full border p-2 rounded mt-1"
+          className="w-full border p-2 rounded mt-1 font-serif focus:outline-none focus:ring-1 focus:ring-primary"
         />
       </div>
       <button
