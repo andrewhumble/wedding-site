@@ -46,9 +46,13 @@ export default function RsvpForm({ partyId, initialParty, onSuccess }: RsvpFormP
       (a, b) => titlePrecedence(a.title) - titlePrecedence(b.title)
     )
 
-    const guestNames = sortedGuests
-      .map((g) => (g.title ? `${g.title} ${g.full_name}` : g.full_name))
-      .join(' & ')
+    const formattedNames = sortedGuests.map((g) =>
+      g.title ? `${g.title} ${g.full_name}` : g.full_name
+    )
+    const guestNames =
+      formattedNames.length <= 2
+        ? formattedNames.join(' & ')
+        : `${formattedNames.slice(0, -1).join(', ')} & ${formattedNames.at(-1)}`
 
     const res = await fetch('/api/rsvp', {
       method: 'POST',
